@@ -72,8 +72,15 @@ public class Main {
 
         Random r = new Random();
         int numFromDice = r.nextInt(realDiceType)+1;
-        System.out.println(numFromDice);
-        int result = realThrowcount*numFromDice+realAdditionalPoints;
+        int result = 0;
+        int throwRes = 0;
+
+        for(int k = 1 ; k <= realThrowcount ; k++){
+            numFromDice = r.nextInt(realDiceType)+1;
+            throwRes += numFromDice;
+        }
+        result = throwRes + realAdditionalPoints;
+
         System.out.println(result);
 
 
